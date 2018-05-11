@@ -1,0 +1,139 @@
+" シンタックスハイライト
+syntax enable
+
+" 基本設定
+set nocompatible
+
+" ファイルタイプ検出を行う
+filetype plugin indent on
+
+" エンコード設定
+set encoding=utf-8
+scriptencoding utf-8
+
+" 背景色の設定
+set background=light
+" set background=dark
+
+" 256色設定
+set t_Co=256
+
+" インデント系の設定
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+
+" 行番号表示
+set number
+" カーソル位置表示
+set ruler
+" カーソル行の強調
+set cursorline
+" 不可視文字を表示
+" set list
+
+" 検索時ハイライト
+set hlsearch
+" インクリメンタルサーチOFF
+set noincsearch
+
+" バックアップファイル不使用
+set nobackup
+
+" NeoBundle設定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" カラースキーマ
+NeoBundle 'vim-scripts/summerfruit256.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/pyte'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'morhetz/gruvbox'
+
+NeoBundle 'itchyny/lightline.vim'
+
+" ruby系プラグイン
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-endwise'
+
+" indent可視化
+" NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Yggdroot/indentLine'
+
+" w3m
+NeoBundle 'yuratomo/w3m.vim'
+
+" qfixgrep
+NeoBundle 'fuenor/qfixgrep.git'
+
+" memolist
+NeoBundle 'glidenote/memolist.vim'
+
+call neobundle#end()
+
+" 未インストールプラグインのインストール
+NeoBundleCheck
+
+" colorscheme summerfruit256
+let g:solarized_termcolors=256
+colorscheme solarized
+" colorscheme pyte
+" colorscheme lucius
+" colorscheme gruvbox
+
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
+" カーソル移動の割当
+noremap! <C-p> <Up>
+noremap! <C-n> <Down>
+noremap! <C-b> <Left>
+noremap! <C-f> <Right>
+noremap! <C-a> <Home>
+noremap! <C-e> <End>
+noremap! <C-d> <Delete>
+noremap <C-p> <Up>
+noremap <C-n> <Down>
+noremap <C-b> <Left>
+noremap <C-f> <Right>
+noremap <C-a> <Home>
+noremap <C-e> <End>
+noremap <C-d> <Delete>
+
+
+" changelog用設定
+let g:changelog_timeformat = "%Y-%m-%d"
+let g:changelog_username = "SEKIGUCHI Yuichiro  <sekiguchi@dreamedge.net>"
+
+" qfixgrep用設定
+let MyGrep_Key = 'g'
+let MyGrep_KeyB = ','
+let MyGrep_Height = 10
+let mygrepprg = 'egrep'
+
+" memolist用設定
+let g:memolist_path = "/var/run/user/1000/gvfs/smb-share:server=129.60.27.149,share=memo"
+nnoremap <Leader>mn  :MemoNew<CR>
+nnoremap <Leader>ml  :MemoList<CR>
+nnoremap <Leader>mg  :MemoGrep<CR>
+
+let g:memolist_memo_suffix = "md"
+let g:memolist_memo_date = "%Y%m%d"
+let g:memolist_template_dir_path = "~/.vim/template/memolist"
+let g:memolist_qfixgrep = 1
+
+noremap ;	:
+
+" Ctrl-sで保存
+inoremap <C-s> <C-o>:w<CR>
+nnoremap <C-s> :w<CR>
+" Ctrl-qで終了
+inoremap <C-q> <C-o>:q<CR>
+nnoremap <C-q> :q<CR>
+
