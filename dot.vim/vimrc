@@ -123,7 +123,6 @@ let MyGrep_Height = 10
 let mygrepprg = 'egrep'
 
 " memolist用設定
-" let g:memolist_path = "/var/run/user/1000/gvfs/smb-share:server=129.60.27.149,share=memo"
 let g:memolist_path = "~/memolist"
 nnoremap <Leader>mn  :MemoNew<CR>
 nnoremap <Leader>ml  :MemoList<CR>
