@@ -24,6 +24,9 @@ set shiftwidth=2
 set autoindent
 set expandtab
 
+" cjk widthの設定
+set ambiwidth=double
+
 " 行番号表示
 set number
 " カーソル位置表示
@@ -91,6 +94,7 @@ let g:lightline = {
       \ }
 
 " カーソル移動の割当
+" commandline + insert mode
 noremap! <C-p> <Up>
 noremap! <C-n> <Down>
 noremap! <C-b> <Left>
@@ -98,14 +102,15 @@ noremap! <C-f> <Right>
 noremap! <C-a> <Home>
 noremap! <C-e> <End>
 noremap! <C-d> <Delete>
+noremap! <C-k> <PageDown>
+" normal + visual mode
 noremap <C-p> <Up>
 noremap <C-n> <Down>
 noremap <C-b> <Left>
 noremap <C-f> <Right>
 noremap <C-a> <Home>
 noremap <C-e> <End>
-noremap <C-d> <Delete>
-
+noremap <C-k> <PageDown>
 
 " changelog用設定
 let g:changelog_timeformat = "%Y-%m-%d"
@@ -118,7 +123,8 @@ let MyGrep_Height = 10
 let mygrepprg = 'egrep'
 
 " memolist用設定
-let g:memolist_path = "/var/run/user/1000/gvfs/smb-share:server=129.60.27.149,share=memo"
+" let g:memolist_path = "/var/run/user/1000/gvfs/smb-share:server=129.60.27.149,share=memo"
+let g:memolist_path = "~/memolist"
 nnoremap <Leader>mn  :MemoNew<CR>
 nnoremap <Leader>ml  :MemoList<CR>
 nnoremap <Leader>mg  :MemoGrep<CR>
