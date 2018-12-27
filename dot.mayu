@@ -1,0 +1,49 @@
+include "104.mayu"
+include "dvorak.mayu"
+
+#mod windows -= LeftWindows
+#mod Alt += LeftWindows
+#key *LeftWindows => *LeftAlt
+#mod Alt -= LeftAlt
+#mod windows += LeftAlt
+#key *LeftAlt => *LeftWindows
+#mod control += CapsLock
+#key *CapsLock = *LControl
+
+#Change win+bs to deletep
+key *S-*C-*A-W-BackSpace = *S-*C-*A-Delete
+
+#Change arrow-keys to PageUp,Down and Home,End
+key W-*S-*C-Left = *S-*C-Home
+key W-*S-*C-Right = *S-*C-End
+key W-*S-*C-Up = *S-*C-PageUp
+key W-*S-*C-Down = *S-*C-PageDown
+
+#Set emacs-setting with Windows-key
+key W-*S-I = *S-Up
+key W-*S-J = *S-Left
+key W-*S-M = *S-Down
+key W-*S-L = *S-Right
+key W-A-*S-I = *S-PageUp
+key W-A-*S-J = *S-Home
+key W-A-*S-M = *S-PageDown
+key W-A-*S-L = *S-End
+
+#Set Windows+num-key to Function-key
+key W-*C-*A-_1 = *C-*A-F1
+key W-*C-*A-_2 = *C-*A-F2
+key W-*C-*A-_3 = *C-*A-F3
+key W-*C-*A-_4 = *C-*A-F4
+key W-*C-*A-_5 = *C-*A-F5
+key W-*C-*A-_6 = *C-*A-F6
+key W-*C-*A-_7 = *C-*A-F7
+key W-*C-*A-_8 = *C-*A-F8
+key W-*C-*A-_9 = *C-*A-F9
+key W-*C-*A-_0 = *C-*A-F10
+key W-Hyphen = *A-F11
+key W-Equal = *A-F12
+
+#Set Windows+i to Insert
+key W-G = Insert
+key W-R = PrintScreen
+key W-K = Escape
